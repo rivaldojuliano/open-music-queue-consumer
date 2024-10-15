@@ -23,10 +23,12 @@ class PlaylistsService {
     const playlist = playlistResult.rows[0];
 
     return {
-      id: playlist.id,
-      name: playlist.name,
-      username: playlist.username,
-      songs: songResult.rows
+      playlist: {
+        id: playlist.id,
+        name: playlist.name,
+        username: playlist.username,
+        songs: songResult.rows
+      }
     };
   }
 }
